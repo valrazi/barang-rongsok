@@ -8,7 +8,25 @@ export const routes: RouteRecordRaw[] = [
       {
         name: "home",
         path: "",
-        component: () => import("@/pages/Home.vue"),
+        component: () => import("@/pages/admin/Login.vue"),
+      },
+      {
+        name: "admin-login",
+        path: "admin-login",
+        meta:{isAuth: true},
+        component: () => import("@/pages/admin/Login.vue"),
+      },
+      {
+        name: "user-list",
+        path: "user-list",
+        meta:{needAuth: true},
+        component: () => import("@/pages/admin/UserList.vue"),
+      },
+      {
+        name: "product-list",
+        path: "product-list",
+        meta:{needAuth: true},
+        component: () => import("@/pages/admin/ProductList.vue"),
       },
     ],
   },
